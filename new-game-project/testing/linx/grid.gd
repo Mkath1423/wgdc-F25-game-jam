@@ -30,7 +30,7 @@ func spawn_grid(data: LevelData) -> void:
 	var arr = []
 	for i in range(data.grid_size.x):
 		for j in range(data.grid_size.y):
-			var tmp: Node
+			var tmp = $"../path".duplicate()
 			
 			# looking to see if it is part of path
 			var inpath = false
@@ -40,17 +40,12 @@ func spawn_grid(data: LevelData) -> void:
 					break
 					
 			if data.pathHidden:
-				tmp = $"../hidden".duplicate()
 				tmp.isHidden = true
-			else:
-				if inpath:
-					tmp = $"../path".duplicate()
-				else:
-					tmp = $"../lava".duplicate()
 			if inpath:
 				tmp.inPath = true
 			tmp.gridx = i
 			tmp.gridy = j
+			tmp.updateone()
 			arr.append(tmp)
 	add_children(arr)
 	
