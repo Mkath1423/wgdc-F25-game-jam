@@ -87,7 +87,7 @@ func load_level(i : int):
 	current_level = i
 	
 	for c in $rules.get_children():
-		$rules.remove_child(c)
+		c.queue_free()
 	
 	for rule in levels[current_level].rules:
 		$rules.add_child(rule.instantiate())
