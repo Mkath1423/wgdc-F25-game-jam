@@ -19,8 +19,8 @@ func add_children(children: Array) -> void:
 		i += 1
 
 func is_in_grid(grid_pos : Vector2i) -> bool:
-	return grid_pos.x < 0 or grid_pos.y < 0 or \
-		grid_pos.x >= grid_size.x or grid_pos.y >= grid_size.y
+	return grid_pos.x >= 0 and grid_pos.y >= 0 and \
+		grid_pos.x < grid_size.x and grid_pos.y < grid_size.y
 
 func get_grid_pos(grid_pos : Vector2i) -> Vector2i:
 	return global_position + Vector2(grid_pos) * (Vector2(1, -1) * cell_size + cell_padding)

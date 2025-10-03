@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="LevelData" load_steps=2 format=3 uid="uid://c5ilwx07126gc"]
+
+[ext_resource type="Script" uid="uid://bpcnqrhdxhfcf" path="res://testing/lexie/level_data.gd" id="1_u6ygt"]
+
+[resource]
+script = ExtResource("1_u6ygt")
+grid_size = Vector2i(10, 10)
+metadata/_custom_type_script = "uid://bpcnqrhdxhfcf"
