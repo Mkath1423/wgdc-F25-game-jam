@@ -1,0 +1,29 @@
+[gd_scene load_steps=2 format=3 uid="uid://crkitlxx8syt8"]
+
+[ext_resource type="Script" uid="uid://bf4anv1mj1l0n" path="res://testing/lexie/rules_list.gd" id="1_ffdqm"]
+
+[node name="rules_list" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ffdqm")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_right = 190.0
+offset_bottom = 185.0
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "Follow the rules!"
+
+[node name="HSeparator" type="HSeparator" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="items" type="VBoxContainer" parent="VBoxContainer/HSeparator"]
+layout_mode = 0
+offset_right = 190.0
+offset_bottom = 185.0
