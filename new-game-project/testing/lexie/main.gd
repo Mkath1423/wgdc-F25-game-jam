@@ -35,10 +35,9 @@ func _process(deltatime : float):
 
 func step_player(move_dir : Vector2i):
 	player_position += move_dir * step_distance
-	
 	$player.global_position = $grid.get_grid_pos(player_position)
-	step += 1
-	
-	player_stepped.emit()
 	player_position_updated.emit()
+	
+	step += 1
+	player_stepped.emit()
 	
