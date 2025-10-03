@@ -7,7 +7,6 @@ class_name GridPlace extends Node2D
 var spawnedgrid = false
 
 func add_children(children: Array) -> void:
-	var i = 0
 	for child in children:
 		if child.get_parent() != null:
 			child.get_parent().remove_child(child)
@@ -15,21 +14,45 @@ func add_children(children: Array) -> void:
 		add_child(child)
 		child.global_position = get_grid_pos(
 			Vector2i(
-				i % grid_size.x,
-				floor(i / grid_size.y)
+				child.gridx,
+				child.gridy
 			))
-		i += 1
 
 func _process(delta: float):
 	if ($"../player" != null and !spawnedgrid):
+		print("helo")
+		var my_resource_instance: LevelData = load("testing/lexie/test_level.tres")
+		spawn_grid(my_resource_instance)
 		print("hello world")
-		spawngrid([$"../player".duplicate(), $"../player".duplicate()])
 		spawnedgrid = true
 
-func spawngrid(elementsList: Array) -> void:
-	var player_node = $"../player"
-	elementsList = [player_node.duplicate(), player_node.duplicate()]
-	add_children(elementsList)
+func spawn_grid(data: LevelData) -> void:
+	var arr = []
+	for i in range(data.grid_size.x):
+		for j in range(data.grid_size.y):
+			var tmp: Node
+			
+			# looking to see if it is part of path
+			var inpath = false
+			for p in data.path:
+				if p.x == i and p.y == j:
+					inpath = true
+					break
+					
+			if data.pathHidden:
+				tmp = $"../hidden".duplicate()
+				tmp.isHidden = true
+			else:
+				if inpath:
+					tmp = $"../path".duplicate()
+				else:
+					tmp = $"../lava".duplicate()
+			if inpath:
+				tmp.inPath = true
+			tmp.gridx = i
+			tmp.gridy = j
+			arr.append(tmp)
+	add_children(arr)
 	
 
 func is_in_grid(grid_pos : Vector2i) -> bool:
