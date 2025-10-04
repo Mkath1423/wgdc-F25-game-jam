@@ -1,9 +1,9 @@
 [gd_scene load_steps=5 format=3 uid="uid://20b0png2n262"]
 
 [ext_resource type="Script" uid="uid://dmxlktemlhgsw" path="res://testing/linx/main.gd" id="1_jd4bl"]
-[ext_resource type="Texture2D" uid="uid://yk7kamw6ita5" path="res://icon.svg" id="2_2r44o"]
+[ext_resource type="Texture2D" uid="uid://yk7kamw6ita5" path="res://art/icon.svg" id="2_2r44o"]
 [ext_resource type="Script" uid="uid://kurck7hviu81" path="res://testing/linx/grid.gd" id="3_jd4bl"]
-[ext_resource type="Script" uid="uid://cf6d4pfrehbvq" path="res://testing/linx/gridsquare.gd" id="4_2r44o"]
+[ext_resource type="PackedScene" uid="uid://basujupmlla30" path="res://scenes/tiles/tile.tscn" id="4_2r44o"]
 
 [node name="main" type="Node2D"]
 script = ExtResource("1_jd4bl")
@@ -24,7 +24,4 @@ cell_padding = Vector2(2, 2)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
-[node name="path" type="Sprite2D" parent="."]
-position = Vector2(-485, 387)
-texture = ExtResource("2_2r44o")
-script = ExtResource("4_2r44o")
+[node name="path" parent="." instance=ExtResource("4_2r44o")]

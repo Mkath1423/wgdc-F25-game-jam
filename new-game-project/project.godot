@@ -10,10 +10,19 @@ config_version=5
 
 [application]
 
-config/name="New Game Project"
-run/main_scene="uid://20b0png2n262"
+config/name="Follow the rules"
+run/main_scene="uid://d2v32c86cyjco"
 config/features=PackedStringArray("4.5", "GL Compatibility")
-config/icon="res://icon.svg"
+config/icon="res://art/icon.svg"
+
+[autoload]
+
+GameState="*res://scripts/game_state.gd"
+
+[display]
+
+window/size/viewport_width=736
+window/size/viewport_height=414
 
 [input]
 

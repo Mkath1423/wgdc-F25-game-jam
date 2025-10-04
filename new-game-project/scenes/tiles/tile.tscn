@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://basujupmlla30"]
+
+[ext_resource type="Texture2D" uid="uid://dq5h2bq5pl458" path="res://art/sprites.png" id="1_fsv8g"]
+[ext_resource type="Script" uid="uid://d3i3trqsgh81u" path="res://scripts/grid/gridsquare.gd" id="2_wmtt7"]
+
+[node name="tile" type="Node2D"]
+script = ExtResource("2_wmtt7")
+base_color = Color(1, 1, 1, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_fsv8g")
+region_enabled = true
+region_rect = Rect2(32, 0, 32, 32)
