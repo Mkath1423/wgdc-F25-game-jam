@@ -36,10 +36,12 @@ func reset():
 func set_player_position(pos : Vector2i):
 	player_position = pos
 	self.global_position = GameState.grid.get_grid_pos(player_position)
-	
+	$"."
 func step_player(move_dir : Vector2i):
 	set_player_position(player_position + move_dir)
 	
+	GameState.grid.get_grid_object(player_position).isHidden = false
+		
 	if not GameState.grid.is_in_grid(player_position):
 		call_deferred("kill_player")
 	

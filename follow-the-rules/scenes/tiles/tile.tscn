@@ -1,13 +1,26 @@
-[gd_scene load_steps=3 format=3 uid="uid://basujupmlla30"]
+[gd_scene load_steps=6 format=3 uid="uid://basujupmlla30"]
 
-[ext_resource type="Texture2D" uid="uid://dq5h2bq5pl458" path="res://art/sprites.png" id="1_fsv8g"]
+[ext_resource type="Texture2D" uid="uid://c5k2r1tv0y4ai" path="res://art/sprites.png" id="1_fsv8g"]
 [ext_resource type="Script" uid="uid://d3i3trqsgh81u" path="res://scripts/grid/gridsquare.gd" id="2_wmtt7"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i38sc"]
+atlas = ExtResource("1_fsv8g")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y6dap"]
+atlas = ExtResource("1_fsv8g")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4u2tw"]
+atlas = ExtResource("1_fsv8g")
+region = Rect2(96, 0, 32, 32)
 
 [node name="tile" type="Node2D"]
 script = ExtResource("2_wmtt7")
 base_color = Color(1, 1, 1, 1)
+gridTextures = Array[Texture2D]([SubResource("AtlasTexture_i38sc"), SubResource("AtlasTexture_y6dap"), SubResource("AtlasTexture_4u2tw")])
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_fsv8g")
 region_enabled = true
-region_rect = Rect2(32, 0, 32, 32)
+region_rect = Rect2(0, 0, 32, 32)
