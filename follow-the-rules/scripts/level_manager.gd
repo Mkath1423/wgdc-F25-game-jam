@@ -13,7 +13,7 @@ var levels : Array[LevelData] = [
 	#preload("res://levels/level5.tres"),
 	#preload("res://levels/level7.tres"),
 	preload("res://levels/level6.tres"),
-	preload("res://levels/level8.tres"),
+	#preload("res://levels/level8.tres"),
 ]
 
 var end_screen : PackedScene = preload("res://scenes/screens/end.tscn")

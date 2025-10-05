@@ -16,6 +16,5 @@ func player_spin(direction: MovementRule.DIRECTION) -> int:
 	for rule in get_children():
 		if rule is BaseRule:
 			spin += rule.spin_bonus(direction, GameState.player.step)
-	GameState.player.last_spin = spin
 	
 	return spin

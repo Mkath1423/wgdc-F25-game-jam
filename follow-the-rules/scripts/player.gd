@@ -24,7 +24,9 @@ func reset_idle():
 	idle = true
 
 func _process(_delta: float) -> void:
-	$Sprite2D.rotation_degrees = -90 * last_spin
+	
+	var s = GameState.rules_manager.player_spin(MovementRule.DIRECTION.UP)
+	$Sprite2D.rotation_degrees = -90 * s
 	if not idle:
 		$Sprite2D.texture = walk_textures[step % walk_textures.size()]
 	else:
