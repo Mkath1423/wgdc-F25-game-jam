@@ -9,12 +9,29 @@ signal player_position_updated
 signal player_stepped
 signal player_died
 
+var idle : bool = true
+
+@export var idle_texture: Texture2D
+@export var walk_textures: Array[Texture2D]
+
+func _ready():
+	$Timer.timeout.connect(reset_idle)
+
+func reset_idle():
+	idle = true
+
 func _process(_delta: float) -> void:	
+	if not idle:
+		$Sprite2D.texture = walk_textures[step % walk_textures.size()]
+	else:
+		$Sprite2D.texture = idle_texture
+	
 	if Input.is_action_just_pressed("reset"):
 		GameState.level_manager.reset_level()
 
 func reset():
 	step = 1
+	idle = true
 
 func set_player_position(pos : Vector2i):
 	player_position = pos
@@ -29,6 +46,8 @@ func step_player(move_dir : Vector2i):
 	player_position_updated.emit()
 	
 	step += 1
+	idle = false
+	$Timer.start()
 	player_stepped.emit()
 
 

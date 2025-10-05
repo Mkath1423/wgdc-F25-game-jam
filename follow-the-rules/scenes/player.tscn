@@ -1,13 +1,30 @@
-[gd_scene load_steps=3 format=3 uid="uid://cgktanq2vrgtc"]
+[gd_scene load_steps=6 format=3 uid="uid://cgktanq2vrgtc"]
 
 [ext_resource type="Script" uid="uid://dsi0e21sjp8ap" path="res://scripts/player.gd" id="1_g2els"]
-[ext_resource type="Texture2D" uid="uid://dq5h2bq5pl458" path="res://art/sprites.png" id="2_qhqgy"]
+[ext_resource type="Texture2D" uid="uid://c5k2r1tv0y4ai" path="res://art/sprites.png" id="2_qhqgy"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g2els"]
+atlas = ExtResource("2_qhqgy")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qhqgy"]
+atlas = ExtResource("2_qhqgy")
+region = Rect2(64, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dqkch"]
+atlas = ExtResource("2_qhqgy")
+region = Rect2(96, 32, 32, 32)
 
 [node name="player" type="Node2D"]
 script = ExtResource("1_g2els")
+idle_texture = SubResource("AtlasTexture_g2els")
+walk_textures = Array[Texture2D]([SubResource("AtlasTexture_qhqgy"), SubResource("AtlasTexture_dqkch")])
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 z_index = 1
+position = Vector2(0, -16)
 texture = ExtResource("2_qhqgy")
 region_enabled = true
 region_rect = Rect2(0, 0, 32, 32)
+
+[node name="Timer" type="Timer" parent="."]
