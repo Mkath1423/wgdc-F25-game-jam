@@ -6,8 +6,11 @@ var current_level_idx : int
 var current_level : LevelData
 
 var levels : Array[LevelData] = [
+	preload("res://levels/level1.tres"),
 	preload("res://levels/level2.tres"),
-	preload("res://levels/level3.tres")
+	preload("res://levels/level3.tres"),
+	preload("res://levels/level4.tres"),
+	preload("res://levels/level5.tres"),
 ]
 
 var end_screen : PackedScene = preload("res://scenes/screens/end.tscn")
