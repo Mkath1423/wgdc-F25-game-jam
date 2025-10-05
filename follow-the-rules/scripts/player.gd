@@ -54,6 +54,7 @@ func step_player(move_dir : Vector2i):
 
 
 func kill_player():
+	$deathSound.play(1.15)
 	player_died.emit()
 	GameState.level_manager.reset_level()
 	GameState.deaths += 1
