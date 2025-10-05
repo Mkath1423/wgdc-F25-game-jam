@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://c6drl8h5iej83"]
+
+[ext_resource type="PackedScene" uid="uid://deyp73rj7jpeo" path="res://scenes/rules/movement_rule.tscn" id="1_frhlm"]
+
+[node name="move_right" instance=ExtResource("1_frhlm")]
+rule_text = "Press D to move Right"

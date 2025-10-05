@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://drsp5obt83gdq"]
+
+[ext_resource type="Script" uid="uid://cvmuetmj7rfp5" path="res://scripts/rules/stay_in_grid.gd" id="1_itd2a"]
+
+[node name="StayInGrid" type="Node"]
+script = ExtResource("1_itd2a")

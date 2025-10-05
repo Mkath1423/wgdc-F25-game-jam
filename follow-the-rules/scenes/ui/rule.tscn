@@ -1,15 +1,9 @@
 [gd_scene load_steps=2 format=3 uid="uid://cwm1e64o2lwnp"]
 
-[ext_resource type="Script" uid="uid://cpv0sal8vk8bo" path="res://scripts/rule.gd" id="1_8hyft"]
+[ext_resource type="Script" uid="uid://cpv0sal8vk8bo" path="res://scripts/rules/rule_ui.gd" id="1_8hyft"]
 
-[node name="rule" type="Control"]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 1.0
-offset_bottom = 23.0
-script = ExtResource("1_8hyft")
-
-[node name="Label" type="Label" parent="."]
-layout_mode = 0
+[node name="Label" type="Label"]
 offset_right = 40.0
 offset_bottom = 23.0
+text = "defualt text"
+script = ExtResource("1_8hyft")

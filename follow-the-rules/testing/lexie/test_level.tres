@@ -1,9 +1,17 @@
-[gd_resource type="Resource" script_class="LevelData" load_steps=2 format=3 uid="uid://dw6dsy6c1twe6"]
+[gd_resource type="Resource" script_class="LevelData" load_steps=8 format=3 uid="uid://dw6dsy6c1twe6"]
 
 [ext_resource type="Script" uid="uid://bpcnqrhdxhfcf" path="res://scripts/level_data.gd" id="1_u6ygt"]
+[ext_resource type="PackedScene" uid="uid://bfnfliipufh3f" path="res://scenes/rules/move_up.tscn" id="1_y8a54"]
+[ext_resource type="PackedScene" uid="uid://oc3w135ompbf" path="res://scenes/rules/move_left.tscn" id="2_y8a54"]
+[ext_resource type="PackedScene" uid="uid://dy3tymxxpp61d" path="res://scenes/rules/move_down.tscn" id="3_ntphu"]
+[ext_resource type="PackedScene" uid="uid://c6drl8h5iej83" path="res://scenes/rules/move_right.tscn" id="4_s2wco"]
+[ext_resource type="PackedScene" uid="uid://bumwk0ysjhiuy" path="res://scenes/rules/stay_on_path.tscn" id="5_mk824"]
+[ext_resource type="PackedScene" uid="uid://es4oph6up3i2" path="res://scenes/rules/reach_the_flag.tscn" id="6_ntphu"]
 
 [resource]
 script = ExtResource("1_u6ygt")
+rules = Array[PackedScene]([ExtResource("1_y8a54"), ExtResource("2_y8a54"), ExtResource("3_ntphu"), ExtResource("4_s2wco"), ExtResource("5_mk824"), ExtResource("6_ntphu")])
 grid_size = Vector2i(10, 10)
-path = Array[Vector2i]([Vector2i(1, 1), Vector2i(2, 2), Vector2i(3, 3)])
+flag_starting_position = Vector2i(2, 0)
+path = Array[Vector2i]([Vector2i(0, 0), Vector2i(1, 0), Vector2i(2, 0)])
 metadata/_custom_type_script = "uid://bpcnqrhdxhfcf"

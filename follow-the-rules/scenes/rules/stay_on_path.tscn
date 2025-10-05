@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://bumwk0ysjhiuy"]
+
+[ext_resource type="Script" uid="uid://0eyvgg8e4qic" path="res://scripts/rules/stay_on_path.gd" id="1_wqlr8"]
+
+[node name="StayOnPath" type="Node"]
+script = ExtResource("1_wqlr8")
+rule_text = "Stay on the Path"

@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://bgf1m3qrn2rmd"]
 
-[ext_resource type="Script" uid="uid://rrwo75fukyf6" path="res://scripts/rules_list.gd" id="1_imknm"]
+[ext_resource type="Script" uid="uid://rrwo75fukyf6" path="res://scripts/rules/rules_list.gd" id="1_imknm"]
 
 [node name="rule_list" type="Control"]
 layout_mode = 3

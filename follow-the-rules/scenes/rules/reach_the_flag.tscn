@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://es4oph6up3i2"]
+
+[ext_resource type="Script" uid="uid://dynx8x7llbo65" path="res://scripts/rules/reach_the_flag.gd" id="1_ep4w3"]
+
+[node name="ReachTheFlag" type="Node"]
+script = ExtResource("1_ep4w3")
+rule_text = "Reach the Flag"

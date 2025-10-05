@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://oc3w135ompbf"]
+
+[ext_resource type="PackedScene" uid="uid://deyp73rj7jpeo" path="res://scenes/rules/movement_rule.tscn" id="1_22xvb"]
+
+[node name="move_left" instance=ExtResource("1_22xvb")]
+direction = 2
+rule_text = "Press A to move Left"
