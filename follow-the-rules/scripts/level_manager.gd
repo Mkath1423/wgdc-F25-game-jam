@@ -8,7 +8,7 @@ var current_level : LevelData
 signal level_reset
 
 var levels : Array[LevelData] = [
-	preload("res://testing/lexie/test_level.tres")
+	preload("res://testing/lexie/level2.tres")
 ]
 
 var end_screen : PackedScene = preload("res://scenes/screens/end.tscn")
