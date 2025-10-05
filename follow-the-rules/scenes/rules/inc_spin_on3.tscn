@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://85gxdkkinr88"]
+
+[ext_resource type="Script" uid="uid://rsj67d8hllse" path="res://scripts/rules/cycle_spin.gd" id="1_ev3vh"]
+
+[node name="incSpinOn3" type="Node"]
+script = ExtResource("1_ev3vh")
+spin_inc = -1
+cycle_length = 3
+rule_text = "Spin every third step"

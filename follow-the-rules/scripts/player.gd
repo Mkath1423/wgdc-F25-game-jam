@@ -3,6 +3,9 @@ class_name Player extends Node2D
 var spin : int
 var step : int
 
+# for the rule to set sorrys
+var last_spin : int
+
 var player_position : Vector2i 
 
 signal player_position_updated
@@ -20,7 +23,8 @@ func _ready():
 func reset_idle():
 	idle = true
 
-func _process(_delta: float) -> void:	
+func _process(_delta: float) -> void:
+	$Sprite2D.rotation_degrees = -90 * last_spin
 	if not idle:
 		$Sprite2D.texture = walk_textures[step % walk_textures.size()]
 	else:
@@ -30,17 +34,19 @@ func _process(_delta: float) -> void:
 		GameState.level_manager.reset_level()
 
 func reset():
+	last_spin = 0
 	step = 1
 	idle = true
 
 func set_player_position(pos : Vector2i):
 	player_position = pos
 	self.global_position = GameState.grid.get_grid_pos(player_position)
-	$"."
+
+
 func step_player(move_dir : Vector2i):
 	set_player_position(player_position + move_dir)
 	
-	GameState.grid.get_grid_object(player_position).isHidden = false
+	GameState.grid.set_hidden(player_position, false)
 		
 	if not GameState.grid.is_in_grid(player_position):
 		call_deferred("kill_player")

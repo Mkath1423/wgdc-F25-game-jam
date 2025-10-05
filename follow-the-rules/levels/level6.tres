@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="LevelData" load_steps=7 format=3 uid="uid://cry45hwqjj8gs"]
+
+[ext_resource type="PackedScene" uid="uid://bfnfliipufh3f" path="res://scenes/rules/move_up.tscn" id="1_ed82a"]
+[ext_resource type="PackedScene" uid="uid://oc3w135ompbf" path="res://scenes/rules/move_left.tscn" id="2_ir6bx"]
+[ext_resource type="PackedScene" uid="uid://bumwk0ysjhiuy" path="res://scenes/rules/stay_on_path.tscn" id="5_2p4mg"]
+[ext_resource type="PackedScene" uid="uid://85gxdkkinr88" path="res://scenes/rules/inc_spin_on3.tscn" id="5_p5qms"]
+[ext_resource type="PackedScene" uid="uid://es4oph6up3i2" path="res://scenes/rules/reach_the_flag.tscn" id="6_d48ax"]
+[ext_resource type="Script" uid="uid://bpcnqrhdxhfcf" path="res://scripts/level_data.gd" id="8_h4sva"]
+
+[resource]
+script = ExtResource("8_h4sva")
+rules = Array[PackedScene]([ExtResource("1_ed82a"), ExtResource("2_ir6bx"), ExtResource("5_2p4mg"), ExtResource("6_d48ax"), ExtResource("5_p5qms")])
+grid_size = Vector2i(10, 10)
+player_starting_position = Vector2i(3, 2)
+flag_starting_position = Vector2i(4, 1)
+path = Array[Vector2i]([Vector2i(3, 2), Vector2i(3, 3), Vector2i(3, 4), Vector2i(3, 5), Vector2i(4, 5), Vector2i(5, 5), Vector2i(6, 5), Vector2i(6, 4), Vector2i(6, 3), Vector2i(6, 2), Vector2i(5, 2), Vector2i(4, 2), Vector2i(4, 1)])
+metadata/_custom_type_script = "uid://bpcnqrhdxhfcf"

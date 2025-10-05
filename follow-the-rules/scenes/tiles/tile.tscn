@@ -17,7 +17,6 @@ region = Rect2(96, 0, 32, 32)
 
 [node name="tile" type="Node2D"]
 script = ExtResource("2_wmtt7")
-base_color = Color(1, 1, 1, 1)
 gridTextures = Array[Texture2D]([SubResource("AtlasTexture_i38sc"), SubResource("AtlasTexture_y6dap"), SubResource("AtlasTexture_4u2tw")])
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

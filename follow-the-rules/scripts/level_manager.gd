@@ -6,11 +6,14 @@ var current_level_idx : int
 var current_level : LevelData
 
 var levels : Array[LevelData] = [
-	preload("res://levels/level1.tres"),
-	preload("res://levels/level2.tres"),
-	preload("res://levels/level3.tres"),
-	preload("res://levels/level4.tres"),
-	preload("res://levels/level5.tres"),
+	#preload("res://levels/level1.tres"),
+	#preload("res://levels/level2.tres"),
+	#preload("res://levels/level3.tres"),
+	#preload("res://levels/level4.tres"),
+	#preload("res://levels/level5.tres"),
+	#preload("res://levels/level7.tres"),
+	preload("res://levels/level6.tres"),
+	preload("res://levels/level8.tres"),
 ]
 
 var end_screen : PackedScene = preload("res://scenes/screens/end.tscn")
@@ -49,7 +52,7 @@ func load_level(i : int):
 			rules.add_child(tmp)
 	
 	GameState.grid.spawn_grid(current_level)
-	GameState.grid.get_grid_object((current_level.player_starting_position)).isHidden = false
+	GameState.grid.set_hidden(current_level.player_starting_position, false)
 	
 	for rule in rules.get_children():
 		if rule is BaseRule:

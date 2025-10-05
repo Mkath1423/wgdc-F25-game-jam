@@ -34,7 +34,9 @@ func _process(_delta : float):
 		if opposite:
 			dir = (dir + 2) % 4
 		
-		dir = (dir + GameState.player.spin) % 4
-		print("stepping player ", GameState.player.step)
+		var spin = GameState.player.spin + GameState.rules_manager.player_spin(dir)
+		dir = posmod(dir + spin, 4)
+		print("mover", spin)
+		GameState.player.last_spin = spin 
 		GameState.player.step_player(
 			dir_vectors[dir] * GameState.rules_manager.player_speed(dir))

@@ -17,3 +17,7 @@ func init():
 
 func speed_bonus(_direction : MovementRule.DIRECTION, _step : int):
 	return 0
+	
+func spin_bonus(_direction : MovementRule.DIRECTION, _step : int):
+	return 0
+	

@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://cr7nyf38wrha2"]
+
+[ext_resource type="Script" uid="uid://duhlqn36dh0os" path="res://scripts/rules/cycle_step_size.gd" id="1_2atdt"]
+
+[node name="StayOnPath" type="Node"]
+script = ExtResource("1_2atdt")
+step_size_bonus = 1
+cycle_length = 3
+rule_text = "Step distance +1 every third step"

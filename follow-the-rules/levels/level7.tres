@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="LevelData" load_steps=10 format=3 uid="uid://bwdpmtnq7wq2w"]
+
+[ext_resource type="PackedScene" uid="uid://bfnfliipufh3f" path="res://scenes/rules/move_up.tscn" id="1_17e3b"]
+[ext_resource type="PackedScene" uid="uid://oc3w135ompbf" path="res://scenes/rules/move_left.tscn" id="2_cso8c"]
+[ext_resource type="PackedScene" uid="uid://dy3tymxxpp61d" path="res://scenes/rules/move_down.tscn" id="3_51jcn"]
+[ext_resource type="PackedScene" uid="uid://c6drl8h5iej83" path="res://scenes/rules/move_right.tscn" id="4_w4q58"]
+[ext_resource type="PackedScene" uid="uid://bumwk0ysjhiuy" path="res://scenes/rules/stay_on_path.tscn" id="5_qjfn0"]
+[ext_resource type="PackedScene" uid="uid://es4oph6up3i2" path="res://scenes/rules/reach_the_flag.tscn" id="6_0smv6"]
+[ext_resource type="PackedScene" uid="uid://di3xgiudgei6v" path="res://scenes/rules/step2_on_even.tscn" id="7_op3ig"]
+[ext_resource type="PackedScene" uid="uid://cr7nyf38wrha2" path="res://scenes/rules/step2_on_third.tscn" id="8_cso8c"]
+[ext_resource type="Script" uid="uid://bpcnqrhdxhfcf" path="res://scripts/level_data.gd" id="8_lwc5j"]
+
+[resource]
+script = ExtResource("8_lwc5j")
+rules = Array[PackedScene]([ExtResource("1_17e3b"), ExtResource("2_cso8c"), ExtResource("3_51jcn"), ExtResource("4_w4q58"), ExtResource("5_qjfn0"), ExtResource("6_0smv6"), ExtResource("7_op3ig"), ExtResource("8_cso8c")])
+grid_size = Vector2i(10, 10)
+player_starting_position = Vector2i(0, 2)
+flag_starting_position = Vector2i(8, 4)
+path = Array[Vector2i]([Vector2i(0, 2), Vector2i(0, 3), Vector2i(0, 4), Vector2i(0, 5), Vector2i(2, 2), Vector2i(2, 3), Vector2i(2, 4), Vector2i(4, 2), Vector2i(4, 3), Vector2i(4, 4), Vector2i(4, 5), Vector2i(6, 2), Vector2i(6, 3), Vector2i(6, 4), Vector2i(6, 5), Vector2i(8, 2), Vector2i(8, 3), Vector2i(8, 4), Vector2i(8, 5), Vector2i(2, 5)])
+metadata/_custom_type_script = "uid://bpcnqrhdxhfcf"

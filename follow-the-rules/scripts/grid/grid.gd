@@ -16,11 +16,13 @@ func spawn_grid(data: LevelData) -> void:
 		for j in range(data.grid_size.y):
 			var tmp = tile_scene.instantiate()
 					
-			if data.pathHidden:
-				tmp.isHidden = true
+			tmp.isHidden = true
 			
 			if data.in_path(Vector2i(i, j)):
 				tmp.inPath = true
+				
+				if not data.pathHidden:
+					tmp.isHidden = false
 			
 			tmp.gridx = i
 			tmp.gridy = j
@@ -39,3 +41,7 @@ func get_grid_pos(grid_pos : Vector2i) -> Vector2i:
 
 func get_grid_object(grid_pos : Vector2i) -> Node2D:
 	return gridArray[grid_size.x * grid_pos.x + grid_pos.y]
+
+func set_hidden(grid_pos : Vector2i, hidden: bool):
+	if is_in_grid(grid_pos):
+		get_grid_object(grid_pos).isHidden = hidden
