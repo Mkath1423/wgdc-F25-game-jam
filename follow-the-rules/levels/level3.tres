@@ -15,4 +15,5 @@ rules = Array[PackedScene]([ExtResource("1_r8bqa"), ExtResource("2_xtf34"), ExtR
 grid_size = Vector2i(10, 10)
 flag_starting_position = Vector2i(2, 0)
 path = Array[Vector2i]([Vector2i(0, 0), Vector2i(0, 1), Vector2i(0, 2), Vector2i(0, 3), Vector2i(1, 3), Vector2i(2, 3), Vector2i(2, 2), Vector2i(2, 1), Vector2i(2, 0)])
+pathHidden = true
 metadata/_custom_type_script = "uid://bpcnqrhdxhfcf"

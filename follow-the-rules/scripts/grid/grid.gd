@@ -6,9 +6,11 @@ class_name Grid extends Node2D
 
 @export var tile_scene : PackedScene = preload("res://scenes/tiles/tile.tscn")
 
+@export var gridArray : Array[Node2D]
 
 func spawn_grid(data: LevelData) -> void:
 	grid_size = data.grid_size
+	gridArray.clear()
 	
 	for i in range(data.grid_size.x):
 		for j in range(data.grid_size.y):
@@ -22,9 +24,8 @@ func spawn_grid(data: LevelData) -> void:
 			
 			tmp.gridx = i
 			tmp.gridy = j
-			
-			tmp.updateone()
-			
+						
+			gridArray.append(tmp)
 			add_child(tmp)
 			tmp.global_position = get_grid_pos(Vector2i(i, j))
 
@@ -35,3 +36,6 @@ func is_in_grid(grid_pos : Vector2i) -> bool:
 
 func get_grid_pos(grid_pos : Vector2i) -> Vector2i:
 	return global_position + Vector2(grid_pos) * (Vector2(1, -1) * cell_size + cell_padding)
+
+func get_grid_object(grid_pos : Vector2i) -> Node2D:
+	return gridArray[grid_size.x * grid_pos.x + grid_pos.y]

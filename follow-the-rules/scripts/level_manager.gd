@@ -46,6 +46,7 @@ func load_level(i : int):
 			rules.add_child(tmp)
 	
 	GameState.grid.spawn_grid(current_level)
+	GameState.grid.get_grid_object((current_level.player_starting_position)).isHidden = false
 	
 	for rule in rules.get_children():
 		if rule is BaseRule:
