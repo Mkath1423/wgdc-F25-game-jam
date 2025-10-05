@@ -1,12 +1,13 @@
 [gd_scene load_steps=3 format=3 uid="uid://dvoyakjicntqk"]
 
 [ext_resource type="Script" uid="uid://cgwamdb0ckk5r" path="res://scripts/flag.gd" id="1_32e5v"]
-[ext_resource type="Texture2D" uid="uid://yk7kamw6ita5" path="res://art/icon.svg" id="2_q38m2"]
+[ext_resource type="Texture2D" uid="uid://c5k2r1tv0y4ai" path="res://art/sprites.png" id="2_32e5v"]
 
 [node name="flag" type="Node2D"]
 script = ExtResource("1_32e5v")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_q38m2")
+position = Vector2(0, -10)
+texture = ExtResource("2_32e5v")
 region_enabled = true
 region_rect = Rect2(0, 32, 32, 32)
