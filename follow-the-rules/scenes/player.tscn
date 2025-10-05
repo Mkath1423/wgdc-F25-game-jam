@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://cgktanq2vrgtc"]
+[gd_scene load_steps=7 format=3 uid="uid://cgktanq2vrgtc"]
 
 [ext_resource type="Script" uid="uid://dsi0e21sjp8ap" path="res://scripts/player.gd" id="1_g2els"]
 [ext_resource type="Texture2D" uid="uid://c5k2r1tv0y4ai" path="res://art/sprites.png" id="2_qhqgy"]
+[ext_resource type="AudioStream" uid="uid://b8h1loyo0fgoj" path="res://art/buzzer-or-wrong-answer-20582.mp3" id="3_qhqgy"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_g2els"]
 atlas = ExtResource("2_qhqgy")
@@ -28,3 +29,6 @@ region_enabled = true
 region_rect = Rect2(0, 0, 32, 32)
 
 [node name="Timer" type="Timer" parent="."]
+
+[node name="deathSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_qhqgy")
