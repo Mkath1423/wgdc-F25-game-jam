@@ -1,7 +1,5 @@
 class_name Player extends Node2D
 
-var step_distance : int = 1
-
 var spin : int
 var step : int
 
@@ -11,21 +9,22 @@ signal player_position_updated
 signal player_stepped
 signal player_died
 
-func _process(delta: float) -> void:	
+func _process(_delta: float) -> void:	
 	if Input.is_action_just_pressed("reset"):
 		GameState.level_manager.reset_level()
 
+func reset():
+	step = 1
 
 func set_player_position(pos : Vector2i):
 	player_position = pos
 	self.global_position = GameState.grid.get_grid_pos(player_position)
 	
 func step_player(move_dir : Vector2i):
-	set_player_position(player_position + move_dir * step_distance)
+	set_player_position(player_position + move_dir)
 	
 	if not GameState.grid.is_in_grid(player_position):
-		kill_player()
-		return
+		call_deferred("kill_player")
 	
 	player_position_updated.emit()
 	

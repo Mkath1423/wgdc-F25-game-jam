@@ -35,5 +35,6 @@ func _process(_delta : float):
 			dir = (dir + 2) % 4
 		
 		dir = (dir + GameState.player.spin) % 4
-		
-		GameState.player.step_player(dir_vectors[dir])
+		print("stepping player ", GameState.player.step)
+		GameState.player.step_player(
+			dir_vectors[dir] * GameState.rules_manager.player_speed(dir))

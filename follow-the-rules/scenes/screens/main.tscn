@@ -1,17 +1,20 @@
-[gd_scene load_steps=7 format=3 uid="uid://d2v32c86cyjco"]
+[gd_scene load_steps=9 format=3 uid="uid://d2v32c86cyjco"]
 
 [ext_resource type="Script" uid="uid://dvblsalbqvhar" path="res://scripts/main.gd" id="1_sugp2"]
 [ext_resource type="Script" uid="uid://dk7lwpr4mq6xm" path="res://scripts/level_manager.gd" id="2_o6xl0"]
+[ext_resource type="Script" uid="uid://b8e38nukiqte3" path="res://scenes/screens/rules_manager.gd" id="3_ftx24"]
 [ext_resource type="Script" uid="uid://bm00pdlk7jew" path="res://scripts/grid/grid.gd" id="3_tbgi4"]
 [ext_resource type="PackedScene" uid="uid://dvoyakjicntqk" path="res://scenes/flag.tscn" id="5_o6xl0"]
 [ext_resource type="PackedScene" uid="uid://bgf1m3qrn2rmd" path="res://scenes/ui/rules_list.tscn" id="5_tbgi4"]
 [ext_resource type="PackedScene" uid="uid://cgktanq2vrgtc" path="res://scenes/player.tscn" id="5_tefeu"]
+[ext_resource type="Script" uid="uid://qwpax85orgqw" path="res://scripts/stats.gd" id="7_tkjme"]
 
-[node name="main" type="Node" node_paths=PackedStringArray("player", "grid", "flag", "rules_list", "level_manager")]
+[node name="main" type="Node" node_paths=PackedStringArray("player", "grid", "flag", "rules_manager", "rules_list", "level_manager")]
 script = ExtResource("1_sugp2")
 player = NodePath("level_manager/player")
 grid = NodePath("level_manager/grid")
 flag = NodePath("level_manager/flag")
+rules_manager = NodePath("level_manager/rules")
 rules_list = NodePath("CanvasLayer/Control/rules_list")
 level_manager = NodePath("level_manager")
 
@@ -20,9 +23,10 @@ script = ExtResource("2_o6xl0")
 rules = NodePath("rules")
 
 [node name="rules" type="Node" parent="level_manager"]
+script = ExtResource("3_ftx24")
 
 [node name="grid" type="Node2D" parent="level_manager"]
-position = Vector2(358, 343)
+position = Vector2(240, 350)
 script = ExtResource("3_tbgi4")
 grid_size = Vector2i(10, 10)
 cell_size = Vector2(32, 32)
@@ -36,10 +40,13 @@ follow_viewport_enabled = true
 
 [node name="Control" type="Control" parent="CanvasLayer"]
 layout_mode = 3
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_right = -736.0
 offset_bottom = -414.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="rules_list" parent="CanvasLayer/Control" instance=ExtResource("5_tbgi4")]
 layout_mode = 0
@@ -47,3 +54,66 @@ offset_left = 16.0
 offset_top = 16.0
 offset_right = 16.0
 offset_bottom = 16.0
+
+[node name="stats" type="VBoxContainer" parent="CanvasLayer/Control" node_paths=PackedStringArray("time", "deaths", "level", "steps")]
+layout_mode = 0
+offset_left = 576.0
+offset_top = 16.0
+offset_right = 688.0
+offset_bottom = 93.0
+script = ExtResource("7_tkjme")
+time = NodePath("timeContainer/time")
+deaths = NodePath("deathsContainer/deaths")
+level = NodePath("levelContainer/level")
+steps = NodePath("stepContainer/steps")
+
+[node name="levelContainer" type="HSplitContainer" parent="CanvasLayer/Control/stats"]
+layout_mode = 2
+split_offset = 64
+
+[node name="Label" type="Label" parent="CanvasLayer/Control/stats/levelContainer"]
+layout_mode = 2
+text = "Level "
+horizontal_alignment = 2
+
+[node name="level" type="Label" parent="CanvasLayer/Control/stats/levelContainer"]
+layout_mode = 2
+
+[node name="timeContainer" type="HSplitContainer" parent="CanvasLayer/Control/stats"]
+layout_mode = 2
+split_offset = 64
+
+[node name="Label" type="Label" parent="CanvasLayer/Control/stats/timeContainer"]
+layout_mode = 2
+text = "Time:"
+horizontal_alignment = 2
+
+[node name="time" type="Label" parent="CanvasLayer/Control/stats/timeContainer"]
+layout_mode = 2
+text = "00:00"
+
+[node name="deathsContainer" type="HSplitContainer" parent="CanvasLayer/Control/stats"]
+layout_mode = 2
+split_offset = 64
+
+[node name="Label" type="Label" parent="CanvasLayer/Control/stats/deathsContainer"]
+layout_mode = 2
+text = "Deaths:"
+horizontal_alignment = 2
+
+[node name="deaths" type="Label" parent="CanvasLayer/Control/stats/deathsContainer"]
+layout_mode = 2
+text = "00:00"
+
+[node name="stepContainer" type="HSplitContainer" parent="CanvasLayer/Control/stats"]
+layout_mode = 2
+split_offset = 64
+
+[node name="Label" type="Label" parent="CanvasLayer/Control/stats/stepContainer"]
+layout_mode = 2
+text = "Steps:"
+horizontal_alignment = 2
+
+[node name="steps" type="Label" parent="CanvasLayer/Control/stats/stepContainer"]
+layout_mode = 2
+text = "00:00"

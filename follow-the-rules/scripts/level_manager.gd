@@ -5,10 +5,9 @@ class_name LevelManager extends Node
 var current_level_idx : int
 var current_level : LevelData
 
-signal level_reset
-
 var levels : Array[LevelData] = [
-	preload("res://testing/lexie/level2.tres")
+	preload("res://levels/level2.tres"),
+	preload("res://levels/level3.tres")
 ]
 
 var end_screen : PackedScene = preload("res://scenes/screens/end.tscn")
@@ -25,9 +24,9 @@ func next_level_or_win():
 
 func reset_level():
 	GameState.player.set_player_position(current_level.player_starting_position)
-	GameState.flag.set_flag_position(current_level.flag_starting_position)
+	GameState.player.reset()
 	
-	level_reset.emit()
+	GameState.flag.set_flag_position(current_level.flag_starting_position)
 
 
 func load_level(i : int):

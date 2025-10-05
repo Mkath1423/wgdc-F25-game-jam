@@ -14,3 +14,6 @@ var opposite : bool = default_opposite
 
 func init():
 	GameState.rules_list.get_rule(idx).set_text(rule_text)
+
+func speed_bonus(_direction : MovementRule.DIRECTION, _step : int):
+	return 0

@@ -1,6 +1,6 @@
 class_name RulesList extends Control
 
-@onready var rules : VBoxContainer = $VBoxContainer/HSeparator/items
+@export var rules : VBoxContainer
 
 var rule : PackedScene = preload("res://scenes/ui/rule.tscn")
 
